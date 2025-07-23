@@ -30,7 +30,10 @@ while True:
         else:
             saldo -=valor_saque
             print(f"O seu saque está sendo processado. Por favor, retire o valor do caixa.")
+
     elif opcao_operação == "3":
         valor_depositado = int(input("Favor insirir o valor a ser depositado."))
         saldo += valor_depositado
         print(f"Seu novo saldo é {moeda}{saldo}.")
+    elif opcao_operação == "1":
+        print(f"{moeda}{saldo}")
