@@ -4,25 +4,6 @@ MENU_1 = """
 [3] - DEPOSITAR
 [4] - EXTRATO
 """
-ICON_SALDO = ""
-ICON_SACAR = ""
-ICON_DEPOSITAR = ""
-ICON_EXTRATO = ""
-
-MENU_2 = """
-[1] - SALDO
-[2] - SACAR
-[3] - DEPOSITAR
-[4] - EXTRATO
-"""
-#MENU_2 = """
-#[1] - SALDO
-#[2] - SACAR
-#[3] - DEPOSITAR
-#[4] - EXTRATO
-#
-#[5] - MENU INICIAL
-#"""
 
 opcao_operação = 0 
 saldo = 10
