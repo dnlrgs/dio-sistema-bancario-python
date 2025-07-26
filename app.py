@@ -4,6 +4,17 @@ MENU_1 = """
 [3] - DEPOSITAR
 [4] - EXTRATO
 """
+ICON_SALDO = ""
+ICON_SACAR = ""
+ICON_DEPOSITAR = ""
+ICON_EXTRATO = ""
+
+MENU_2 = """
+[1] - SALDO
+[2] - SACAR
+[3] - DEPOSITAR
+[4] - EXTRATO
+"""
 #MENU_2 = """
 #[1] - SALDO
 #[2] - SACAR
@@ -16,6 +27,10 @@ MENU_1 = """
 opcao_operação = 0 
 saldo = 10
 moeda = "R$"
+extrato = """
+EXTRATO
+
+"""
 
 while True:
 
@@ -30,10 +45,20 @@ while True:
         else:
             saldo -=valor_saque
             print(f"O seu saque está sendo processado. Por favor, retire o valor do caixa.")
+            extrato += f"""
+            - SAQUE NO VALOR DE {moeda}{valor_saque}.
+            SALDO: {saldo}"""
 
     elif opcao_operação == "3":
         valor_depositado = int(input("Favor insirir o valor a ser depositado."))
         saldo += valor_depositado
         print(f"Seu novo saldo é {moeda}{saldo}.")
+        extrato += f"""
+        - DEPOSITO NO VALOR DE {moeda}{valor_depositado}.
+        SALDO: {saldo}"""
     elif opcao_operação == "1":
         print(f"{moeda}{saldo}")
+    elif opcao_operação == "4":
+        print(f"""
+        EXTRATO:
+        {extrato}""")    
