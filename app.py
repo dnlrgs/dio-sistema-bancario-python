@@ -41,24 +41,24 @@ while True:
                 if valor_saque > saldo:
                     print(f"Saldo ({moeda}{saldo:.2f}) insuficiente.")
                 else:
-                    print(f"Valor limite para saque é de {moeda}{VALOR_LIMITE_POR_SAQUE}.")
+                    print(f"Valor limite para saque é de {moeda}{VALOR_LIMITE_POR_SAQUE:.2f}.")
             else:
                 saldo -=valor_saque
                 qtd_saques_dia += 1
                 print(f"O seu saque está sendo processado. Por favor, retire o valor do caixa.")
                 extrato += f"""
-                - SAQUE NO VALOR DE {moeda}{valor_saque}.
-                SALDO: {saldo}"""
+                - SAQUE NO VALOR DE {moeda}{valor_saque:.2f}.
+                    SALDO: {saldo:.2f}"""
 
     elif opcao_operação == "3":
         valor_depositado = float(input("Favor insirir o valor a ser depositado."))
         saldo += valor_depositado
-        print(f"Seu novo saldo é {moeda}{saldo}.")
+        print(f"Seu novo saldo é {moeda}{saldo:.2f}.")
         extrato += f"""
-        - DEPOSITO NO VALOR DE {moeda}{valor_depositado}.
-        SALDO: {saldo}"""
+                - DEPOSITO NO VALOR DE {moeda}{valor_depositado:.2f}.
+                    SALDO: {saldo:.2f}"""
     elif opcao_operação == "1":
-        print(f"{moeda}{saldo}")
+        print(f"{moeda}{saldo:.2f}")
     elif opcao_operação == "4":
         if extrato == extrato_vazio:
             print("Não há transações no momento.")
